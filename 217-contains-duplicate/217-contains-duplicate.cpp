@@ -4,9 +4,9 @@ public:
        unordered_map<int, int> ump;
         
         for (auto a: nums){
-            if (ump[a] > 0) return true;
+            
             ump[a]++;
         }
-        return false;
+        return nums.size() > ump.size();
     }
 };
