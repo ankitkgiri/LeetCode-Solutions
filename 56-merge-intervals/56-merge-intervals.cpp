@@ -1,14 +1,10 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        int n= intervals.size();
+        int n = intervals.size();
         stack<vector<int>> st;
         vector<vector<int>> ans;
         sort(intervals.begin(), intervals.end());
-        
-        for (int i = 0; i < n; i++) {
-            cout << intervals[i][0] <<  " "  << intervals[i][1] << " \n";
-        }
         
         st.push(intervals[0]);
             
