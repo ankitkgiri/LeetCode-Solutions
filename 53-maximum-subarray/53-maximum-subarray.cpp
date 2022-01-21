@@ -3,15 +3,18 @@ public:
     int maxSubArray(vector<int>& nums) {
         
         int n = nums.size();
-        int maxi = INT_MIN;
+        int max = INT_MIN;
         int sum  = 0;
         
-        for (int i : nums) {
-            sum += i;
-            maxi = max(sum, maxi);
-            if (sum < 0) sum = 0;
+        for (int i = 0; i < n; i++){
+
+            sum += nums[i];
+            max = std::max(max, sum);
+            if (sum < 0){
+                sum = 0;
+            }
+
         }
-        
-        return maxi;
+        return max;
     }
 };
