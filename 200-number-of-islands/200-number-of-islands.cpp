@@ -1,17 +1,17 @@
 class Solution {
     
 private:
-    void DFS(vector<vector<char>>& grid, int i , int j,  vector<vector<bool>>& visited, int count){
+    void DFS(vector<vector<char>>& grid, int i , int j,  vector<vector<bool>>& visited){
         if (i < 0 || j < 0 || j >= grid[0].size() || i >= grid.size() || grid[i][j] == '0' || visited[i][j] == true){
             return;
         }
         
         visited[i][j] = true;
         
-        DFS(grid, i - 1, j, visited, count);
-        DFS(grid, i + 1, j, visited, count);
-        DFS(grid, i, j - 1, visited, count);
-        DFS(grid, i, j + 1, visited, count);    
+        DFS(grid, i - 1, j, visited);
+        DFS(grid, i + 1, j, visited);
+        DFS(grid, i, j - 1, visited);
+        DFS(grid, i, j + 1, visited);    
         
     }
     
@@ -31,7 +31,7 @@ public:
                 if (grid[i][j] == '1' && visited[i][j] == false){
                     
                     count++;
-                    DFS(grid, i, j, visited, count);
+                    DFS(grid, i, j, visited);
                 }
             }
         }
