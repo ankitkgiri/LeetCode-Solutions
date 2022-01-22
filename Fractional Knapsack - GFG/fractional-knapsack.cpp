@@ -33,18 +33,13 @@ class Solution
         
         double max = 0;
         int sum_v = 0, sum_w = 0;
-        // for (int i = 0; i < n; i++) {
-        //     sum_v += arr[i].value;
-        //     sum_w += arr[i].weight;
-        //     cout << arr[i].value << " " << arr[i].weight << " " << sum_v << " " << sum_w<< "\n";
-        // }
         
         for (int i = 0; i < n; i++) {
             if (W - arr[i].weight > 0){
                 
                 W -= arr[i].weight;
                 max += arr[i].value;
-             //   cout << W << " ";
+
             } else {
                 
                 max += (W)*((double)arr[i].value/arr[i].weight);
