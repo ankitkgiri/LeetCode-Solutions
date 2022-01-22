@@ -18,7 +18,6 @@ public:
     int getMax(vector<vector<int>>& grid, int i, int j, unordered_map<int, int>& mp) {
         
         int count = 1;
-            //cout << i << " " << j << "\n";
       
             set<int> st;
             if (i - 1 >= 0 && grid[i - 1][j] != 0) {
@@ -41,10 +40,10 @@ public:
         
         
             for (int a : st){
-                //cout << a << ":" << mp[a] << " \n";
+                
                 count += mp[a];
             }
-          //  cout << count << "\n";
+
 
         return count;   
     }
@@ -62,33 +61,22 @@ public:
                     DFS(grid, i, j, id, count);
                     mp[id] = count;
                     maxi = max(maxi, count);
-                   // cout << mp[id] << " ";
+                   
                     id++;
                 }
   
             }
         }
         
-//         for (int i = 0; i < n; i++) {
-//             for (int j = 0; j < n; j++) {
-//                 cout << grid[i][j] << " ";
-//             } cout << "\n";
-//         }
-//         for (auto a: mp) {
-//             cout << a.first << " " << a.second << "\n";
-//         }
-        
         
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 0){
                     int max_temp = getMax(grid, i, j, mp);
-                   // cout << max_temp << " ";
                     maxi = std::max(max_temp, maxi);
                 }
             }
         }
-        //cout << getMax(grid, 3, 3, mp);
         
         return maxi;
         
