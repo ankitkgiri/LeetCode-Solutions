@@ -2,12 +2,11 @@ class Solution {
 public:
     bool checkInclusion(string s1, string s2) {
         
-        int k = s1.length();
-        
         unordered_map<char, int> check, mp;
         
         for (auto ch: s1) check[ch]++; 
         
+        int k = s1.length();
         int start = 0;
         for (int end = 0; end < s2.length(); end++) {
             
@@ -21,10 +20,8 @@ public:
                 start++;
             }
             
-            if (end+1 - start == k){
-
-                if (mp == check) return true;
-            }
+            if (end+1 - start == k) if (mp == check) return true;
+            
             
         }
         
