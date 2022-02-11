@@ -5,11 +5,11 @@ public:
         int k = s1.length();
         
         unordered_map<char, int> check;
+        unordered_map<char, int> mp;
         
         for (auto ch: s1) check[ch]++; 
         
         int start = 0;
-        unordered_map<char, int> mp;
         
         for (int end = 0; end < s2.length(); end++) {
             
@@ -31,7 +31,6 @@ public:
                         return true;
                     }
             }
-            
             
         }
         
